@@ -14,23 +14,31 @@ class Employee{
 function check(){
     var id=document.getElementById("ID").value;
     var name=document.getElementById("Name").value;
-    var sal=document.getElementById("Sal").value;
-
-
-    let E1= new Employee(id,name,sal);
-    Arr=JSON.stringify(E1);
-    arr.push(Arr);
-   
+  try{  var sal=document.getElementById("Sal").value;
+       if(sal<10000||sal>50000)
+          throw e;
+          sal=sal*1.10;
+          let E1= new Employee(id,name,sal);
+            Arr=JSON.stringify(E1);
+            arr.push(Arr);
+        
 
     Show();
 
+}catch(e){
+    alert("Enter salary only between 10,000 to 50,000");
+
+}
+
+
+    
   
 
     
 }function Show(){
     
     //console.log(JSON.parse(Arr));
-   let text="<table><th>Id  </th><th>Name</th><th>Basic Salary</th><th>Action<th>";
+   let text="<table><th>Id </th><th>Name</th><th>Basic Salary</th><th>Action<th>";
   for(j=0;j<arr.length;j++){
         let t=JSON.parse(arr[j]);
          
