@@ -1,6 +1,6 @@
 
-const arr =[];
-var  Arr;
+var   arr=[];
+var Arr;
 class Employee{
     constructor(ID,Name,Sal){
         this.ID=ID;
@@ -18,22 +18,24 @@ function check(){
 
 
     let E1= new Employee(id,name,sal);
-   Arr=JSON.stringify(E1);
-
-
+    Arr=JSON.stringify(E1);
+    arr.push(Arr);
    
 
     Show();
 
-    
-}
+  
 
-function Show(){
-    const arr=JSON.parse(Arr);
-    let text="<table><th>Id  </th><th>Name</th><th>Basic Salary</th><th>Action<th>";
-    for(j=0;j<arr.length;j++){
-        text+= "<tr><td>"+arr[j].ID+"</td><td>"+arr[j].Name+"</td><td>"+arr[j].Sal+"</td><td><button>Delete</button></tr>"
-    }
+    
+}function Show(){
+    
+    //console.log(JSON.parse(Arr));
+   let text="<table><th>Id  </th><th>Name</th><th>Basic Salary</th><th>Action<th>";
+  for(j=0;j<arr.length;j++){
+        let t=JSON.parse(arr[j]);
+         
+        text+= "<tr><td>"+t.ID+"</td><td>"+t.Name+"</td><td>"+t.Sal+"</td><td><button>Delete</button></tr>"
+  }
     
     
     
@@ -44,4 +46,6 @@ function Show(){
     
     document.getElementById("res").innerHTML=text;
 }
+
+
 
