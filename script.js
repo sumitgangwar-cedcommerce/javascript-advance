@@ -23,37 +23,30 @@ function check(){
             arr.push(Arr);
         
 
-    Show();
+   
+
 
 }catch(e){
     alert("Enter salary only between 10,000 to 50,000");
 
 }
+ //Show();
+ Show = () => {
+    let text="<table><th>Id </th><th>Name</th><th>Salary</th>";
+      for(j=0;j<arr.length;j++){
+  let t=JSON.parse(arr[j]);
+     
+     text+= "<tr><td>"+t.Name+"</td><td>"+((t.Sal*15)/100)+"</td><td><button>Delete</button></tr>";
+  }
+  return text;
+
+ }
+ document.getElementById("res").innerHTML=Show();
 
 
+}
     
   
-
-    
-}function Show(){
-    
-    //console.log(JSON.parse(Arr));
-   let text="<table><th>Id </th><th>Name</th><th>Basic Salary</th><th>Action<th>";
-  for(j=0;j<arr.length;j++){
-        let t=JSON.parse(arr[j]);
-         
-        text+= "<tr><td>"+t.ID+"</td><td>"+t.Name+"</td><td>"+t.Sal+"</td><td><button>Delete</button></tr>"
-  }
-    
-    
-    
-    
-    
-       text+= "</table>";
-    
-    
-    document.getElementById("res").innerHTML=text;
-}
 
 
 
