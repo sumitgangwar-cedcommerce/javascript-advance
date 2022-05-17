@@ -14,28 +14,23 @@ class Employee{
 
 
 function check(){
-  try{  
+    
     var id=null;
     id=document.getElementById("ID").value;
     var name=document.getElementById("Name").value;
     var sal=null;
-    sal=document.getElementById("Sal").value;
-    if(id==''||name==""||sal=='')
-      throw(e);
-   
+    "use srict";
+    sal=30000;
+    
         
     let E1=new Employee(id,name,sal) 
             Arr=JSON.stringify(E1);
          
             arr.push(Arr);
        
-  }
-  catch(e){
-    document.getElementById("arrow").innerHTML="All fields are compulsory";
-
-  }    
-     
- 
+  
+    
+    
    show();
 
 }; 
