@@ -14,21 +14,26 @@ class Employee{
 
 
 function check(){
-    
-    var id=document.getElementById("ID").value;
+  try{  
+    var id=null;
+    id=document.getElementById("ID").value;
     var name=document.getElementById("Name").value;
-    var sal=document.getElementById("Sal").value;
-    if(sal<0)
-      { console.log("salary shoild not be less than 0");
-      setTimeout("location.reload(true);",2000);
-}
+    var sal=null;
+    sal=document.getElementById("Sal").value;
+    if(id==''||name==""||sal=='')
+      throw(e);
+   
         
     let E1=new Employee(id,name,sal) 
             Arr=JSON.stringify(E1);
          
             arr.push(Arr);
        
-           
+  }
+  catch(e){
+    document.getElementById("arrow").innerHTML="All fields are compulsory";
+
+  }    
      
  
    show();
